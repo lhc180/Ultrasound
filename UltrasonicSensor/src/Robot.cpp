@@ -5,6 +5,7 @@
 
 // include files
 #include "WPILib.h"
+#include "NetworkTables/NetworkTable.h"
 
 class Robot: public SampleRobot
 {
@@ -23,7 +24,7 @@ public:
 			// reading values
 			ultrasonicsensor.Ping();
 			Wait(0.1); // wait for ping to return
-			int range = ultrasonicsensor.GetRangeInches();
+			double range = ultrasonicsensor.GetRangeInches();
 			SmartDashboard::PutNumber(ultrasonicsensor.GetSmartDashboardType(), range);
 
 			// wait a short bit before updating again
